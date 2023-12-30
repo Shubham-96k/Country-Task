@@ -16,6 +16,13 @@ body{
 .controls{
     background-color: #fff;
 }
+.controls #icon{
+    cursor: pointer;
+}
+.controls #icon:hover{
+    transform: scale(0.9);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
 .controls input, 
 .controls button {
     border-radius: 25px;
