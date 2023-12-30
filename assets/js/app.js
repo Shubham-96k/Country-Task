@@ -7,6 +7,8 @@ const search = document.getElementById("search");
 const icon = document.getElementById("icon");
 const upbtn = document.getElementById("upbtn");
 const populatedcountry = document.getElementById("populated-container");
+const langcountry = document.getElementById("language-container");
+const tabb = [...document.querySelectorAll(".tabb")];
 
 
 const countryTemplating = eve => {
@@ -136,12 +138,17 @@ const highestpopulatedcountry = countries.sort((a,b) => {
     populationtemp(newobj);
 })
 
-
-
-
-
-
-
+tabb.forEach(ele => {
+    ele.addEventListener('click', eve => {
+        langcountry.classList.add("d-none");
+        populatedcountry.classList.add("d-none");
+        if(eve.target.innerText.toLowerCase() === "population"){
+            populatedcountry.classList.remove("d-none");
+        }else{
+            langcountry.classList.remove("d-none");
+        }
+    })
+})
 
 
 window.onscroll = function() {
