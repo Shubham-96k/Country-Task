@@ -9,6 +9,7 @@ const upbtn = document.getElementById("upbtn");
 const populatedcountry = document.getElementById("populated-container");
 const langcountry = document.getElementById("language-container");
 const tabb = [...document.querySelectorAll(".tabb")];
+const changetext = document.getElementById("changetext");
 
 
 const countryTemplating = eve => {
@@ -143,13 +144,14 @@ tabb.forEach(ele => {
         langcountry.classList.add("d-none");
         populatedcountry.classList.add("d-none");
         if(eve.target.innerText.toLowerCase() === "population"){
+            changetext.innerText = "10 Most populated countries"
             populatedcountry.classList.remove("d-none");
         }else{
+            changetext.innerText = "Top 10 languages in countries"
             langcountry.classList.remove("d-none");
         }
     })
 })
-
 
 window.onscroll = function() {
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
